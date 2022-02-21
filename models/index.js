@@ -1,5 +1,5 @@
 // Required Models
 const User = require('./user');
-const Write = require('./write');
+const Post = require('./post');
 // Export Models
-module.exports = { User, Write };
+module.exports = { User, Post };

@@ -3,14 +3,14 @@ const { Model, DataTypes } = require('sequelize');
 // Database Connection
 const sequelize = require('../config/connection');
 // Model Extender
-class Write extends Model {}
+class Post extends Model {}
 ///  Write Initilization using sequelize 
 //          Properties   
 //          - id
 //          - title
 //          - body
 //          - user_id
-Write.init(
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -38,8 +38,8 @@ Write.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'write',
+    modelName: 'post',
   }
 );
 // Export Model
-module.exports = Write;
+module.exports = Post;
