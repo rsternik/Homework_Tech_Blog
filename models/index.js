@@ -1,5 +1,5 @@
 // Models
-const User = require('./User');
+const User = require('./User.js');
 const Post = require('./Post');
 const Comment = require('./Comment');
 // User with many posts
