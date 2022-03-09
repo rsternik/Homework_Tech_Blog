@@ -1,0 +1,6 @@
+<h1 class="padding-20">My Posts</h1>
+<p><a class="link" href="/post">New Post</a></p>
+{{!-- pass in data to each individual post --}}
+{{#each posts as |aPost| }}
+{{> post aPost}}
+{{/each}}

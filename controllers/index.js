@@ -1,12 +1,12 @@
-// Required NODE depencies
+// Express Router
 const router = require("express").Router();
-// Required Route files
+// Routes
 const homeRoutes = require("./homeRoutes");
 const apiRoutes = require("./api/");
 const dashboardRoutes = require("./dashboardRoutes");
-// Router Path Declaration
+// Route Path Declarations
 router.use("/", homeRoutes);
 router.use("/dashboard", dashboardRoutes);
 router.use("/api", apiRoutes);
-// Export Router
+// Export
 module.exports = router;

@@ -1,0 +1,29 @@
+<div class="card single-post-padding">
+    <h1 id="post-title" class="post-header">{{post.title}} </h1>
+    <h4>Posted by {{post.user.username}} on {{format_date post.created_at}}</h4>
+    <div class="container">
+        <p id="post-body" class="post-text post-text-padding">{{post.body}}</p>
+    </div>
+    {{!-- If this is current users post you can edit and delete it --}}
+    {{#if currentUser}}
+    <button id="edit-btn">Edit</button>
+    <button id="delete-btn">Delete</button>
+    {{/if}}
+</div>
+{{!-- comment form --}}
+<div class="padding-20">
+    <form id="comment-form " class="padding-20">
+        <label for="comment-text">Leave A Comment</label>
+        <input class="padding-20" type="textarea" name="comment-text" id="comment-text">
+        <button class="padding-20" id="post-comment-btn">Post!</button>
+    </form>
+</div>
+{{!-- load the comments --}}
+{{#each post.comments as |aComment|}}
+{{> comment aComment}}
+{{/each}}
+<link rel="stylesheet" href="/css/single-post.css">
+<script src="/js/single-post.js"></script>
+{{#if currentUser}}
+<script src="/js/edit-delete-post.js"> </script>
+{{/if}}

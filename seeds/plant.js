@@ -1,7 +1,7 @@
 //  Seeds
-const seedPosts = require('./postsSeed');
-const seedUsers = require('./usersSeed');
-const seedComments = require('./commentsSeed');
+const plantPosts = require('./postsSeed');
+const plantUsers = require('./usersSeed');
+const plantComments = require('./commentsSeed');
 //  Sequelize
 const sequelize = require('../config/connection');
 // Plant seeds into DB
