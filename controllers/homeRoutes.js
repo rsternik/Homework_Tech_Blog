@@ -1,4 +1,4 @@
-// NODE depencies
+// NODE dependencies
 const router = require("express").Router();
 // Models 
 const { User, Post, Comment } = require("../models");
@@ -69,7 +69,7 @@ router.get("/viewpost/:id", (req, res) => {
                 res.status(404).json({ message: "Post not found!" });
                 return;
             }
-            const post = dbPostData.get({ plain: true }); 
+            const post = dbPostData.get({ plain: true });
             // Get post data
             const myPost = post.user_id == req.session.user_id;
             res.render("single-post", {
@@ -119,7 +119,7 @@ router.get("/dashboard", (req, res) => {
                 res.status(404).json({ message: "Post not found!" });
                 return;
             }
-            const posts = dbPostData.map((post) => post.get({ plain: true })); 
+            const posts = dbPostData.map((post) => post.get({ plain: true }));
             // .map through user posts    
             res.render("dashboard", { posts, loggedIn: req.session.loggedIn });
         })
