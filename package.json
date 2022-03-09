@@ -1,5 +1,5 @@
 {
-  "name": "week14-mvctechblog-wymore",
+  "name": "tech-blog",
   "version": "1.0.0",
   "description": "## Your Task",
   "main": "server.js",
@@ -10,13 +10,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yardboy2401/week14-mvctechblog-wymore.git"
+    "url": ""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yardboy2401/week14-mvctechblog-wymore/issues"
+    
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
