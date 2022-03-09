@@ -1,7 +1,7 @@
-// Required NODE dependencies
+// Required Module
 const Sequelize = require('sequelize');
 require('dotenv').config();
-// Sequelize Var
+// Sequelize
 let sequelize;
 // Codition to connect to JAWSDB or localhost connection
 if (process.env.JAWSDB_URL) {
@@ -19,5 +19,5 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-// Export Module
+// Export
 module.exports = sequelize;
