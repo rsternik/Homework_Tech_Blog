@@ -21,4 +21,6 @@ A techblog simliar to word press
 ## Contact Information
 Github: https://github.com/rsternik
 
+Live: https://techblog-homework.herokuapp.com/
+
 Email: rsternik.wg@gmail.com
