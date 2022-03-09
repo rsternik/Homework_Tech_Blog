@@ -1,0 +1,68 @@
+/* Oxanium Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Oxanium:wght@400;700&display=swap");
+/* entire document set margin to 0 */
+* {
+  --ox: "Oxanium"; 
+  margin: 0;
+  font-family: var(--ox);
+  }
+  /* text styling */
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  /* navbar links styling */
+  .link {
+    text-decoration: none;
+    color: rgb(235, 235, 235);
+    padding: 10px;
+  }
+
+  /* navbar styling */
+  #navbar {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    background-color: rgb(209, 182, 60);
+  }
+  
+  #navbar li {
+    padding: 10px;
+    display: inline;
+  }
+  
+  #navbar li p {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    color: #d9ead3;
+    display: inline;
+    font-size: large;
+  }
+  #nav-header {
+    color: #d9ead3;
+    font-size: xx-large;
+    padding: 10px;
+  }
+  /* posts 'card' display styling */
+  .card {
+    /* Add shadows for card effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    padding: 20px;
+  }
+  .card h3 {
+    display: inline;
+  }
+  .card h4 {
+    display: inline;
+    align-content: right;
+  }
+
+  .padding-md {
+    padding: 10px;  
+  }
+  
+  /* initially was going to be 20px padding but changed to 10px! */
+  .padding-20 {
+    padding: 10px;
+  }

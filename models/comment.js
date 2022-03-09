@@ -1,50 +1,48 @@
-// Required NODE dependencies
+// Sequelize & Connection
 const { Model, DataTypes } = require('sequelize');
-// Database Connection
 const sequelize = require('../config/connection');
-// Model Extender
-class Comment extends Model { }
-///  Comment Initilization using sequelize 
-//          Properties   
-//          - id
-//          - comment_text
-//          - post_id
-//          - user_id
+// Class
+class Comment extends Model {}
+// Construct
+// id
+// comments_text
+// post_id
+// user_id 
 Comment.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        comment_text: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        post_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'post',
-                key: 'id',
-            },
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'user',
-                key: 'id',
-            },
-        },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'comment',
-    }
+    comment_text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    post_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+          model: 'post',
+          key: 'id',
+      },
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'comment',
+  }
 );
-// Export Model
+// Export
 module.exports = Comment;

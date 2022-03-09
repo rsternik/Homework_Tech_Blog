@@ -31,7 +31,8 @@ const sess = {
 };
 
 app.use(session(sess));
-// Handlebars setup
+
+//express-handlebars setup
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

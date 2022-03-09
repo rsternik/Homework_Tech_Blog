@@ -1,8 +1,6 @@
-// Required NODE dependencies
+// Sequelize & Connection
 const { Model, DataTypes } = require('sequelize');
-// Database Connection
 const sequelize = require('../config/connection');
-// Model Extender
 class Post extends Model {}
 ///  Write Initilization using sequelize 
 //          Properties   
@@ -41,5 +39,5 @@ Post.init(
     modelName: 'post',
   }
 );
-// Export Model
+// Export
 module.exports = Post;

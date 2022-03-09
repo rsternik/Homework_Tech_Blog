@@ -1,7 +1,8 @@
+// Router
 const router = require("express").Router();
+// Models
 const { User, Post, Comment } = require("../../models");
-
-//get route for all the comments
+// All Comments get route
 router.get("/", (req, res) => {
   Comment.findAll({
     attributes: ["id", "comment_text", "user_id", "post_id", "created_at"],
@@ -12,7 +13,7 @@ router.get("/", (req, res) => {
         attributes: ["username"],
       },
     ],
-  }) //include the posts and comments for the current user
+  }) // Include users comments
     .then((dbCommentData) => {
       res.json(dbCommentData);
     })
@@ -21,8 +22,7 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-//get route for comment by id number
+// Comment by id get route
 router.get("/:id", (req, res) => {
   Comment.findOne({
     where: {
@@ -36,10 +36,10 @@ router.get("/:id", (req, res) => {
         attributes: ["username"],
       },
     ],
-  }) //include the posts and comments for the current user
+  }) // Current users post comments
     .then((dbCommentData) => {
       if (!dbCommentData) {
-        res.status(404).json({ message: "No Comment found with this id" });
+        res.status(404).json({ message: "No posts match this id." });
         return;
       }
       res.json(dbCommentData);
@@ -49,10 +49,9 @@ router.get("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-//add comment route
+// Write Comment route
 router.post("/", (req, res) => {
-  //expecting comment_text, user_id, post_id
+  // Write comment to DB
   Comment.create({
     comment_text: req.body.comment_text,
     user_id: req.session.user_id,
@@ -66,8 +65,7 @@ router.post("/", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-//remove comment by id
+// Delete comment by id
 router.delete("/:id", (req, res) => {
   Post.destroy({
     where: {
@@ -85,7 +83,5 @@ router.delete("/:id", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-//export router 
+});// Export
 module.exports = router;
